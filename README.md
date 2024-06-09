@@ -1,1 +1,1 @@
-# Gymshark
+# Gymbuddy
