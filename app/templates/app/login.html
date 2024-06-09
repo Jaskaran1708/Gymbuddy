@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Design by foolishdeveloper.com -->
+    <title>Login Page</title>
+ 
+    {% comment %} <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet"> {% endcomment %}
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="{% static 'app/css/login.css' %}">
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form method="post">
+        {% csrf_token %} 
+        <form action="" method="post">
+          {% csrf_token %}
+          <h3>Login Here</h3>
+          {% if error %}
+              <p style="color: red;">{{ error }}</p>
+          {% endif %}
+          {{ form.as_p }}
+          <button type="submit">Login</button>
+          <a href="{% url 'signup' %}">Don't have an account? Signup here</a>
+      </form>
+    </form>
+</body>
+</html>

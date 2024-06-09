@@ -1,0 +1,23 @@
+{% extends 'app/base.html'%}
+{% load static %}
+{% block quotes%}
+
+<div class="sidebar">
+  <a href="{% url 'profile' %}">Profile</a>
+  <a class="active" href="{% url 'complaint' %}">Complaints</a>
+  <a href="{% url 'membership' %}">Membership details</a>
+  <a href="{% url 'payment' %}">Buy membership</a>
+</div>
+
+<div class="main-content">
+  
+    <h2>Submit a Complaint</h2>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Submit</button>
+    </form>
+</div>
+
+
+{% endblock quotes %}

@@ -1,0 +1,26 @@
+{% extends 'app/base.html'%}
+{% load static%}
+{% block quotes%}
+    <main>
+        <section class="about-us">
+            <div class="quotes">
+                <h1>Muscle Group</h1>
+                <div class="section-content">
+                    <ul class = 'muscles' >
+                        {% for muscle in muscles %}
+                        <br>
+                            <li><a href="{% url 'submuscle' muscle.id %}" class = 'aboutus'>{{ muscle.name }}</a>
+                                <p class = 'description'>{{ muscle.description }}</p>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                            
+                            
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    {% endblock quotes%}
