@@ -11,7 +11,9 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'gymbuddy.settings')
+settings_module = 'gymbuddy.deployment' if 'WEBSITE_HOSTNAME' in os.environ else 'gymbuddy.settings'
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
 
 application = get_wsgi_application()
 app = application
